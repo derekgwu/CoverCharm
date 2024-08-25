@@ -1,0 +1,41 @@
+.homepage{
+    height: 90vh;
+    width: 100%;
+    background-color: #003844;
+    margin-top: 10vh;
+    display: flex;
+}
+
+.home-title{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    
+}
+
+.home-button{
+    background-color: transparent;
+
+    border: 5px solid #f194b4;
+    color: #f194b4;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-top: 5vh;
+}
+
+
+.home-icon{
+    width: 50%;
+    height: auto;
+    color: white;
+    filter: invert(66%) sepia(41%) saturate(1175%) hue-rotate(359deg) brightness(101%) contrast(105%);
+}
