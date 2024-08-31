@@ -1,0 +1,44 @@
+.navbar{
+    background-color: var(---app-black);
+    border-bottom: 2px solid var(--app-yellow);
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo{
+    display: flex;
+    padding: 0;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.logo-div{
+    justify-content: start;
+    display: flex;
+    margin: 0
+}
+
+.links{
+    display: flex;
+    width: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-items: center;
+   
+ 
+}
+
+.login-btn{
+    background-color: var(--app-orange);
+    border: none;
+    border-radius: 10px;
+    color: var(--app-navy-blue);
+    width: 40%;
+    padding: 10px 20px;
+    font-weight:bolder;
+}

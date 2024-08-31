@@ -1,7 +1,7 @@
 # Welcome to Coverly (name subject to change, open to suggestion)!
 
 ### Goals
-- Develop personalized modules for undergraduate students learning CS
+- Generate cover letters easily
 
 ### Development Goals
 - This is a web application with a full-stack experience
@@ -11,3 +11,4 @@
 
 ### How to Run the Frontend Locally
 1. Install Node.js
+

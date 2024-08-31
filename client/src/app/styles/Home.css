@@ -1,0 +1,97 @@
+.home-main{
+    background-color: var(---app-black);
+    height: 100vh;
+    width: 100%;
+}
+
+.title-page{
+    height: 80vh;
+    width: 100%;
+    padding-top: 2vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.title-text{
+    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.title-text h1{
+    font-size: 36px;
+}
+
+.title-text h3{
+    font-weight: lighter;
+}
+
+.start-btn{
+    background-color: transparent;
+    border: 3px solid var(--app-orange);
+    color: var(--app-orange);
+    margin-top: 4vh;
+    padding: 10px 20px;
+    height: 10vh;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.start-btn:hover{
+    background-color:var(--app-orange);
+    border: 3px solid var(--app-orange);
+    color: var(--app-navy-blue);
+    font-size: 18px;
+    padding: 10px 20px;
+    height: 10vh;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.title-img{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.circle{
+    width: 50vh;
+    background-color: transparent;;
+    border: 5px solid var(--app-orange);
+    height:50vh;
+    border-radius: 50%;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.circle-icon{
+    transform: scale(5);
+    fill: var(--app-orange);
+    width: 30%;
+    transition: all 0.3s;
+}
+
+.circle:hover{
+    background-color: var(--app-orange);
+    transition: all 0.3s;
+}
+
+.circle:hover .circle-icon{
+    fill: var(--app-blue);
+    transform: scale(7);
+    transition: all 0.3s;
+}

@@ -38,6 +38,19 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+  
+  ---app-black : #000814;
+  --app-navy-blue: #001D3D;
+  --app-blue: #003566;
+  --app-orange: #FFC300;
+  --app-yellow: #FFD60A;
+
+}
+
+*{
+  padding: 0%;
+  margin: 0%;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
