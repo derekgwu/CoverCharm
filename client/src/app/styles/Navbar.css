@@ -18,7 +18,7 @@
 }
 
 .logo-div{
-    justify-content: start;
+    justify-content: flex-start;
     display: flex;
     margin: 0
 }
@@ -41,4 +41,9 @@
     width: 40%;
     padding: 10px 20px;
     font-weight:bolder;
+}
+
+.pfp{
+    border-radius: 50%;
+    transform: scale(0.5);
 }
