@@ -22,12 +22,10 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="logo-div">
-                <PiPaperPlaneTiltThin style={{transform: "scale(2)", width: "50%"}}/>
+                <PiPaperPlaneTiltThin onClick={()=> {navigateTo("/")}}style={{transform: "scale(2)", width: "50%"}}/>
             </div>
             <div className="links">
                 <p>About</p>
-
-                
                 {user ? <img className="pfp" src={user.picture}/> : <button className="login-btn" onClick={() => {navigateTo("/api/auth/login")}}>Login</button>}
               
             </div>
