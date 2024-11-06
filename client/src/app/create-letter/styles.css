@@ -1,7 +1,105 @@
 .create-main{
-
+    width: 100%;
+    background-color: var(---app-black);
+    height: 100vh;
 }
 
 .main{
+    width: 100%;
+    height: 85vh;
+    flex-direction: row;
+    display: flex;
+}
+
+.write-letter{
     width: 90%;
+    height: 80vh;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.write-letter h2{
+    margin-bottom: 10px;;
+}
+
+.write-letter textarea{
+    height: 100%;
+    padding: 5%;
+    border: 2px white solid;
+  
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--app-navy-blue);
+}
+
+.write-letter textarea:focus{
+    border-color: var(--app-yellow);
+
+}
+
+.letterbox{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.variable-section{
+    width: 90%;
+    padding: 5%;
+    
+}
+
+.variable-section h2{
+    margin-bottom: 10px;;
+}
+
+.variable-adder-sec{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.variable-adder{
+    padding: 2.5%;
+    width: 80%;
+    background-color: var(--app-navy-blue);
+    border: 2px white solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.variable-adder:focus{
+    border-color: var(--app-yellow);
+}
+
+.variable-add-btn{
+    background-color: var(--app-orange);
+    border: none;
+    color: var(---app-black);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 20%;
+    
+}
+.variable-set{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.variable-set-btn{
+    width: 25%;
+    padding: 2%;
+    margin: 10px;
+    color: var(---app-black);
+    background-color: var(--app-yellow);
+    border: none;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+
+.variable-set-btn:hover{
+    transform: scale(1.2);
+    transition: all 0.3s;
+    background-color: white;
 }
