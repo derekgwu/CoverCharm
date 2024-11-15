@@ -11,9 +11,7 @@ export default function CreateScreen() {
     const [variableSet, setVariableSet] = useState([])
 
 
-    useEffect(()=>{
-        console.log(letter);
-    }, [letter])
+ 
 
     
 
@@ -32,6 +30,10 @@ export default function CreateScreen() {
         setVariableSet([...variableSet, variable])
         setVariable("")
         
+    }
+
+    const removeVariableViaBtn = () => {
+
     }
 
     const addVariableViaBtn = (args) => {
@@ -57,7 +59,10 @@ export default function CreateScreen() {
                 </div>
                 <div className="variable-set">
                 {variableSet.map(item => (
+                    <>
                     <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" key={item}>{item}</button>
+                    <button>x</button>
+                    </>
                 ))}
                 </div>
                 
