@@ -1,3 +1,4 @@
+
 .navbar{
     background-color: var(---app-black);
     border-bottom: 2px solid var(--app-yellow);
@@ -46,4 +47,12 @@
 .pfp{
     border-radius: 50%;
     transform: scale(0.5);
+}
+
+.logout-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 15vh;
 }

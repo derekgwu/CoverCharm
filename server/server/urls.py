@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views  # Import your views module
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('/api', views.home, name='home'),  # Maps '/home/' to the 'home' view
 ]

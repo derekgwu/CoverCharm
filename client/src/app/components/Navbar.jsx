@@ -27,8 +27,8 @@ const Navbar = () => {
             <div className="links">
                 <p>About</p>
                 {user ? <img className="pfp" src={user.picture}/> : <button className="login-btn" onClick={() => {navigateTo("/api/auth/login")}}>Login</button>}
-              
             </div>
+        
         </div>
     )
 }

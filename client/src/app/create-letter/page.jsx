@@ -2,12 +2,13 @@
 import "./styles.css"
 import Navbar from "../components/Navbar";
 import React, {useEffect, useState, useRef} from "react"
+import LetterTemplateService from "../services/LetterTemplateService";
 
 export default function CreateScreen() {
     const [letter, setLetter]= useState("");
     const textareaRef = useRef(null);
     const [cursorPosition, setCursorPosition] = useState(0);
-    const [variable, setVariable] = useState("");
+    const [variable, setVariable] = useState([]);
     const [variableSet, setVariableSet] = useState([])
 
 
@@ -32,12 +33,16 @@ export default function CreateScreen() {
         
     }
 
-    const removeVariableViaBtn = () => {
-
-    }
+    const removeVariable = (variable) => {
+        setVariableSet((prevItems) => prevItems.filter((item) => item !== variable));
+      };
 
     const addVariableViaBtn = (args) => {
         setLetter(letter + " /<" + args + ">/ ");
+    }
+
+    const createLetter = () => {
+        LetterTemplateService.createLetterTemplate();
     }
   return (
     <div className="create-main">
@@ -59,15 +64,19 @@ export default function CreateScreen() {
                 </div>
                 <div className="variable-set">
                 {variableSet.map(item => (
-                    <>
-                    <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" key={item}>{item}</button>
-                    <button>x</button>
-                    </>
+                    <div className="variable-btn">
+                        <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" key={item}>{item}</button>
+                        <button className="variable-rm-btn" onClick={()=>{removeVariable(item)}}>x</button>
+                    </div>
                 ))}
+                </div>
+                <div className="create-template-div">
+                    <button className="create-template-btn" onClick={() => {createLetter()}}>Create Template</button>
                 </div>
                 
             </div>
         </div>
+       
     </div>
   );
 }
