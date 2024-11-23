@@ -6,4 +6,4 @@
     - Middle-level: [Django](https://www.djangoproject.com/)
     - Backend: MySQL
 
-
+See client directory to how to run the frontend locally
