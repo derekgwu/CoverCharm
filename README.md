@@ -6,4 +6,20 @@
     - Middle-level: [Django](https://www.djangoproject.com/)
     - Backend: MySQL
 
+### How To Run Locally
+1. Install Node.js
+```
+npm -v
+```
+2. Start the frontend
+```
+npm install
+cd client
+npm run dev
+```
+
+### Production Link 
+https://coverly-eight.vercel.app/
+
+### Known Bugs
 See client directory to how to run the frontend locally
