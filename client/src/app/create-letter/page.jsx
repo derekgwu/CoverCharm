@@ -68,8 +68,8 @@ export default function CreateScreen() {
                 </div>
                 <div className="variable-set">
                 {variableSet.map(item => (
-                    <div className="variable-btn">
-                        <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" key={item}>{item}</button>
+                    <div className="variable-btn" key={item}>
+                        <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" >{item}</button>
                         <button className="variable-rm-btn" onClick={()=>{removeVariable(item)}}>x</button>
                     </div>
                 ))}
