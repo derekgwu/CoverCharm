@@ -3,13 +3,17 @@ import "./styles.css"
 import Navbar from "../components/Navbar";
 import React, {useEffect, useState, useRef} from "react"
 import LetterTemplateService from "../services/LetterTemplateService";
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function CreateScreen() {
     const [letter, setLetter]= useState("");
     const textareaRef = useRef(null);
     const [cursorPosition, setCursorPosition] = useState(0);
     const [variable, setVariable] = useState([]);
-    const [variableSet, setVariableSet] = useState([])
+    const [variableSet, setVariableSet] = useState([]);
+
+    //should be login to access this page in the first place
+    const { user, error, isLoading } = useUser();
 
 
  
@@ -42,7 +46,7 @@ export default function CreateScreen() {
     }
 
     const createLetter = () => {
-        LetterTemplateService.createLetterTemplate();
+        LetterTemplateService.createLetterTemplate(user?.email, letter);
     }
   return (
     <div className="create-main">
@@ -64,8 +68,8 @@ export default function CreateScreen() {
                 </div>
                 <div className="variable-set">
                 {variableSet.map(item => (
-                    <div className="variable-btn">
-                        <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" key={item}>{item}</button>
+                    <div className="variable-btn" key={item}>
+                        <button onClick={() => {addVariableViaBtn(item)}}className="variable-set-btn" >{item}</button>
                         <button className="variable-rm-btn" onClick={()=>{removeVariable(item)}}>x</button>
                     </div>
                 ))}
