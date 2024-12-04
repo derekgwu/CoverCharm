@@ -1,13 +1,13 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+#from django.views.decorators.csrf import csrf_exempt
 import json
 import requests
 
 def home(request):
     return HttpResponse("hello world")
 
-@csrf_exempt
+
 def postletters(request):
     if request.method == 'POST':
         try:

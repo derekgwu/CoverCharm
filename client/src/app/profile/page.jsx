@@ -19,7 +19,7 @@ export default function Profile() {
   }
   useEffect(() => {
       if(!user){
-        navigateTo("/");
+        navigateTo("/api/auth/login");
       }
   }, [user])
   return (
@@ -28,6 +28,7 @@ export default function Profile() {
     <div className="create-main">
         <Navbar/>
         {user &&
+ 
         <div className="person">
           <img className="coverimg" src={user.picture}/>
           <h2>{user.name}</h2>
@@ -36,6 +37,7 @@ export default function Profile() {
           <h3>My Templates</h3>
           <button className="create-new" onClick={() => {navigateTo("/create-letter")}}>Create New +</button>
         </div>
+  
     </div>
     
     </>

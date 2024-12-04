@@ -29,6 +29,14 @@ ALLOWED_HOSTS = []
 
 CORS_ALLOW_CREDENTIALS = True
 
+SECURE_SSL_REDIRECT = False
+
+SESSION_COOKIE_SECURE = False
+
+CSRF_COOKIE_SECURE = False
+
+CSRF_COOKIE_HTTPONLY = False
+
 
 # Application definition
 
@@ -60,7 +68,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000/*',  
+    'http://localhost:3000',  
 ]
 
 ROOT_URLCONF = 'server.urls'
