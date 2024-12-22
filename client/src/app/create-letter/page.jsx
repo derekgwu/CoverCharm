@@ -15,9 +15,6 @@ export default function CreateScreen() {
     //should be login to access this page in the first place
     const { user, error, isLoading } = useUser();
 
-
- 
-
     
 
     const updateLetter = (e) => {

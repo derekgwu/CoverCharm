@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
-#from django.views.decorators.csrf import csrf_exempt
+from django.middleware.csrf import get_token
 import json
 import requests
 
@@ -17,3 +17,8 @@ def postletters(request):
         except json.JSONDecodeError:
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
     return JsonResponse({'error': 'Only POST requests allowed'}, status=400)
+
+
+
+def get_csrf_token(request):
+    return JsonResponse({'csrfToken': get_token(request)})

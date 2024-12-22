@@ -20,4 +20,5 @@ from . import views  # Import your views module
 urlpatterns = [
     path('api', views.home, name='home'),  
     path('postletters', views.postletters, name='postletters'), 
+    path('csrf/', views.get_csrf_token, name="get_csrf_token"),
 ]
