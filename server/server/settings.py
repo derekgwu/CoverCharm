@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,16 @@ SECRET_KEY = 'django-insecure-qewq@2q%pgq=7%)42-hv!6lcy%mn7uigsnlmc6f8z2vk31j6la
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+CORS_ALLOW_CREDENTIALS = True
+
+SECURE_SSL_REDIRECT = False
+
+SESSION_COOKIE_SECURE = False
+
+CSRF_COOKIE_SECURE = False
+
+CSRF_COOKIE_HTTPONLY = False
 
 
 # Application definition
@@ -37,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'server'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +62,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000/*',  
+]
+
+ALLOWED_HOSTS = [
+   "localhost", "127.0.0.1"
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -79,8 +109,11 @@ DATABASES = {
         'USER': 'root',
         'NAME' : 'server',
         'PASSWORD': 'Fire7flower+',
-        'HOST': 'localhost',  # or your MySQL server IP/hostname
-        'PORT': '3306',        # default MySQL port
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',        
+        'OPTIONS': {
+            'charset': 'utf8mb4', 
+        },
     }
 }
 

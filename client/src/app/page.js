@@ -4,9 +4,11 @@ import Navbar from "./components/Navbar.jsx";
 import React from "react";
 import { PiPaperPlaneTiltThin } from "react-icons/pi";
 import { useRouter } from 'next/navigation';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 
 export default function Home() {
+  const { user, error, isLoading } = useUser();
   const router = useRouter();
   const navigateTo = (link) => {
       router.push(link);
@@ -21,9 +23,12 @@ export default function Home() {
           <h3>Expedite quality cover letters easily. Generate personalized covers for your dream company
             in seconds.
           </h3>
-          <button className="start-btn" onClick={()=> {navigateTo("/profile")}}>
+          {user ? <button className="start-btn" onClick={()=> {navigateTo("/profile")}}>
             Get Started
-          </button>
+          </button> : <button className="start-btn" onClick={()=> {navigateTo("/api/auth/login")}}>
+            Get Started
+          </button>}
+          
         </div>
         <div className="title-img">
           <div className="circle">
