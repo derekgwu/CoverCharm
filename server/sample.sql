@@ -26,8 +26,9 @@ CREATE TABLE IF NOT EXISTS letters (
 
 -- Create a table for letter_regex
 CREATE TABLE IF NOT EXISTS letter_regex (
-    regex VARCHAR(64) NOT NULL UNIQUE,
-    letter_id CHAR(64) PRIMARY KEY,
+    regex VARCHAR(64) NOT NULL,
+    letter_id CHAR(64) NOT NULL,
+    PRIMARY KEY (letter_id, regex),
     foreign key (letter_id) references letter_ids(letter_id)
 
 );

@@ -19,6 +19,9 @@ def postletters(request):
             letter_id = uuid.uuid4()
             new_id = LetterIds.objects.create(email=body['user_id'], letter_id=letter_id)
             letter = Letters.objects.create(letter=body['letter'], letter_0=new_id)
+
+            for regex_instance in body['regex']:
+                regex = LetterRegex.objects.create(letter_id = letter_id, regex=str(regex_instance))
             return JsonResponse({'received_value': body})
         except json.JSONDecodeError:
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
