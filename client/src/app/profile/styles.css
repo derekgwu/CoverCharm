@@ -1,7 +1,12 @@
 .create-main{
     width: 100%;
     background-color: var(---app-black);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .person{
@@ -39,7 +44,7 @@
 }
 
 .create-new{
-    width: 10%;
+    width: 30%;
     height: 7vh;
     margin-left: 0;
     margin-right: auto;
@@ -57,3 +62,48 @@
     transform: scale(1.2);
     transition: all 0.3s;
 }
+
+.letters-display {
+    width: 100%;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+
+.letter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 25%; 
+    width: auto;
+    height: 30vh;
+    background-color: var(--app-navy-blue);
+    border: 2px solid var(--app-yellow);
+    border-radius: 20px;
+    padding: 3%;
+    transition: all 0.3s ease-in-out;
+    margin-right: 5%;  
+    margin-bottom: 5%;  
+}
+
+.letter-card:hover {
+    background-color: var(--app-yellow);
+    color: var(--app-black);  /* Fixed the typo */
+    transition: all 0.3s ease-in-out;
+}
+
+.letter-card-title {
+    font-size: 28px;
+}
+
+.letter-card-date {
+    font-size: 18px;
+}
+

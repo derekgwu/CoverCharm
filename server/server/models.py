@@ -125,7 +125,7 @@ class DjangoSession(models.Model):
 
 class LetterIds(models.Model):
     email = models.CharField(max_length=64, blank=True, null=True)
-    letter_id = models.UUIDField(default=uuid.uuid4, primary_key=True)
+    letter_id = models.UUIDField(primary_key=True,default=uuid.uuid4)
 
     class Meta:
         managed = False
@@ -133,18 +133,19 @@ class LetterIds(models.Model):
 
 
 class LetterRegex(models.Model):
-    regex = models.CharField(unique=True, max_length=64)
-    letter_id = models.UUIDField(primary_key=True)
+    regex = models.CharField(max_length=64)
+    letter = models.ForeignKey(LetterIds, on_delete=models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'letter_regex'
+        unique_together = ('regex', 'letter')
 
 
 class Letters(models.Model):
     letter = models.TextField()
     letter_0 = models.OneToOneField(LetterIds, models.DO_NOTHING, db_column='letter_id', primary_key=True)  # Field renamed because of name conflict.
-
+    l_name = models.CharField(max_length=64)
     class Meta:
         managed = False
         db_table = 'letters'

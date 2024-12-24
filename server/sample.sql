@@ -21,13 +21,15 @@ CREATE TABLE IF NOT EXISTS letter_ids (
 CREATE TABLE IF NOT EXISTS letters (
     letter TEXT NOT NULL,
     letter_id CHAR(64) PRIMARY KEY,
+    l_name CHAR(64) NOT NULL,
     foreign key (letter_id) references letter_ids(letter_id)
 );
 
 -- Create a table for letter_regex
 CREATE TABLE IF NOT EXISTS letter_regex (
-    regex VARCHAR(64) NOT NULL UNIQUE,
-    letter_id CHAR(64) PRIMARY KEY,
+    regex VARCHAR(64) NOT NULL,
+    letter_id CHAR(64) NOT NULL,
+    PRIMARY KEY (letter_id, regex),
     foreign key (letter_id) references letter_ids(letter_id)
 
 );

@@ -11,6 +11,12 @@
     justify-content: space-evenly;
 }
 
+.profile-container {
+    position: relative; 
+    cursor: pointer;
+}
+
+
 .nav-logo{
     display: flex;
     padding: 0;
@@ -55,4 +61,38 @@
     left: 0;
     width: 30%;
     height: 15vh;
+}
+
+.dropdown {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 120%;
+    background-color: var(--app-yellow);
+    border: 1px solid var(--app-navy-blue);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--app-navy-blue);
+    z-index: 10;
+}
+
+.dropdown-item{
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.dropdown p {
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 2%;
+    transition: all 0.3s;
+    
+}
+
+.dropdown-item:hover {
+    background-color: var(--app-navy-blue);
+    color: var(--app-yellow);
+    transition: all 0.3s;
+    
 }

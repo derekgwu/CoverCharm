@@ -1,0 +1,31 @@
+
+.letter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 25%; 
+    width: auto;
+    height: 30vh;
+    background-color: var(--app-navy-blue);
+    border: 2px solid var(--app-yellow);
+    border-radius: 20px;
+    padding: 3%;
+    transition: all 0.3s ease-in-out;
+    margin-right: 5%;  
+    margin-bottom: 5%;  
+}
+
+.letter-card:hover {
+    background-color: var(--app-yellow);
+    color: var(--app-black);  /* Fixed the typo */
+    transition: all 0.3s ease-in-out;
+}
+
+.letter-card-title {
+    font-size: 28px;
+}
+
+.letter-card-date {
+    font-size: 18px;
+}
