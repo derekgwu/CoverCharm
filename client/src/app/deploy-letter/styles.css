@@ -1,0 +1,69 @@
+.main{
+    width: 100%;
+    background-color: var(--app-black);
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.deploy-content{
+    display: flex;
+    min-height: 85vh;
+    height: auto;
+    width: 100%;
+    background: linear-gradient(180deg, var(--app-black), var(--app-navy-blue));
+}
+
+.letter-showcase{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    height: auto;
+    width: 70%;
+    padding: 5%;
+    
+}
+
+.letter-showcase h2{
+    margin-bottom: 10%;
+    font-size: 200%;
+}
+
+.letter{
+    height: auto;
+    width: auto;
+    overflow-x: hidden;
+    border-radius: 10px;
+    padding: 5%;
+    border: 2px solid var(--app-yellow)
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    height: auto;
+    width: 30%;
+    padding: 5%;
+}
+
+.built-in-option{
+    height: 15vh;
+    margin-bottom: 10%;
+    font-size: 125%;
+    background-color: var(--app-navy-blue);
+    border: 2px solid var(--app-yellow);
+    border-radius: 25px;
+}
+
+.delete-option{
+    height: 7.5vh;
+    margin-bottom: 10%;
+    font-size: 125%;
+    background-color: rgb(255, 53, 53);
+    border: 2px solid rgb(255, 53, 53);
+    border-radius: 25px;
+}

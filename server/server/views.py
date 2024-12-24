@@ -46,3 +46,19 @@ def getletters(request):
         response_data.append(letter_info)
     
     return JsonResponse(response_data, safe=False)
+
+
+@csrf_exempt
+@api_view(['GET'])
+def get_letter_content(request):
+    id = request.query_params.get('id')
+    data = Letters.objects.filter(letter_0=id)
+    response_data = []
+    for item in data:
+        letter_info = {
+            "content" : item.letter,
+            "name" : item.l_name
+        }
+        response_data.append(letter_info)
+    print(response_data)
+    return JsonResponse(response_data, safe=False)

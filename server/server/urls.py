@@ -20,5 +20,6 @@ from . import views  # Import your views module
 urlpatterns = [
     path('api', views.home, name='home'),  
     path('postletters', views.postletters, name='postletters'), 
-    path('api/getletters', views.getletters, name='getletters')
+    path('api/getletters', views.getletters, name='getletters'),
+    path('api/get_letter_content', views.get_letter_content, name='get_letter_content')
 ]

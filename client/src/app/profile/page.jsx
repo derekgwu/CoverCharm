@@ -30,6 +30,8 @@ export default function Profile() {
   
   }, [user])
 
+
+
   return (
     <>
 
@@ -46,7 +48,7 @@ export default function Profile() {
         </div>
         <div className="letters-display">
           {letters && letters.map((letter, i) => (
-            <TemplateCard name={letter.letter_name} id={i}/>
+            <TemplateCard name={letter.letter_name} id={i} letter_id={letter.letter_id} />
           ))}
        
         </div>
