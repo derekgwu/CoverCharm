@@ -10,14 +10,14 @@ const CREATE_LETTER_TEMPLETE_API = process.env.NEXT_PUBLIC_SERVER_URL + "/postle
 const GET_LETTERS_API = process.env.NEXT_PUBLIC_SERVER_URL + "/api/getletters";
 
 class LetterTemplateService{
-    getLetters(user_id){
-        console.log(GET_LETTERS_API)
-        const response = axios.get(GET_LETTERS_API, 
-            {
-                params: { email: user_id }, 
-            }).then((response) =>{
-                console.log(response.data)
-            })
+    async getLetters(user_id){
+        const response = await axios.get(GET_LETTERS_API, {
+            params: { email: user_id },
+        });
+        console.log(response.data)
+        let ret = response.data
+        return ret
+
     }
     createLetterTemplate(user_id, letter, letterName){
         let matches = parseRegexInstance(letter)

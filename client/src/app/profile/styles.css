@@ -1,7 +1,8 @@
 .create-main{
     width: 100%;
     background-color: var(---app-black);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,54 +63,47 @@
     transition: all 0.3s;
 }
 
-.letters-display{
+.letters-display {
     width: 100%;
-    height: auto;
-    padding-left: 10%;
-    padding-right: 10%;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 3%;
     padding-top: 3%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
 }
+
 .letter-card {
-    display: flex;  
+    display: flex;
     flex-direction: column;
-    width: 30%;
-    flex: 1;
-    flex-grow: 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 25%; 
+    width: auto;
+    height: 30vh;
     background-color: var(--app-navy-blue);
     border: 2px solid var(--app-yellow);
     border-radius: 20px;
     padding: 3%;
-    padding-top: 5%;
-    padding-bottom: 5%;
     transition: all 0.3s ease-in-out;
-    margin-right: 5%;
-
+    margin-right: 5%;  
+    margin-bottom: 5%;  
 }
 
-.letter-card:hover{
+.letter-card:hover {
     background-color: var(--app-yellow);
-    color: var(---app-black);
+    color: var(--app-black);  /* Fixed the typo */
     transition: all 0.3s ease-in-out;
 }
-.letter-card-title{
-    font-size: 24px;
+
+.letter-card-title {
+    font-size: 28px;
 }
 
-.letter-card-date{
+.letter-card-date {
     font-size: 18px;
 }
-
-.letter-cover {
-    background-color: var(--app-yellow);
-    height: 15vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
 
