@@ -2,6 +2,10 @@
     width: 100%;
     background-color: var(---app-black);
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .person{
@@ -39,7 +43,7 @@
 }
 
 .create-new{
-    width: 10%;
+    width: 30%;
     height: 7vh;
     margin-left: 0;
     margin-right: auto;
@@ -57,3 +61,55 @@
     transform: scale(1.2);
     transition: all 0.3s;
 }
+
+.letters-display{
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.letter-card {
+    display: flex;  
+    flex-direction: column;
+    width: 30%;
+    flex: 1;
+    flex-grow: 0;
+    background-color: var(--app-navy-blue);
+    border: 2px solid var(--app-yellow);
+    border-radius: 20px;
+    padding: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    transition: all 0.3s ease-in-out;
+    margin-right: 5%;
+
+}
+
+.letter-card:hover{
+    background-color: var(--app-yellow);
+    color: var(---app-black);
+    transition: all 0.3s ease-in-out;
+}
+.letter-card-title{
+    font-size: 24px;
+}
+
+.letter-card-date{
+    font-size: 18px;
+}
+
+.letter-cover {
+    background-color: var(--app-yellow);
+    height: 15vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+

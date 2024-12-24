@@ -145,7 +145,7 @@ class LetterRegex(models.Model):
 class Letters(models.Model):
     letter = models.TextField()
     letter_0 = models.OneToOneField(LetterIds, models.DO_NOTHING, db_column='letter_id', primary_key=True)  # Field renamed because of name conflict.
-
+    l_name = models.CharField(max_length=64)
     class Meta:
         managed = False
         db_table = 'letters'
