@@ -37,8 +37,11 @@
     width: auto;
     overflow-x: hidden;
     border-radius: 10px;
-    padding: 5%;
     border: 2px solid var(--app-yellow)
+}
+
+.letter-print{
+    padding: 5%;
 }
 
 .options{
@@ -57,6 +60,14 @@
     background-color: var(--app-navy-blue);
     border: 2px solid var(--app-yellow);
     border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.built-in-option:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+    background-color: var(--app-yellow);
+    color: var(--app-black);
 }
 
 .delete-option{
