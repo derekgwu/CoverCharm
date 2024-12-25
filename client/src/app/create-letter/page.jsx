@@ -42,7 +42,18 @@ export default function CreateScreen() {
         if(variable.length == 0){
             return;
         }
-        setLetter(letter + " /<" + variable + ">/ ");
+        const textarea = textareaRef.current;
+        const cursorPos = textarea.selectionStart;
+        const textBefore = letter.substring(0, cursorPos);
+        const textAfter = letter.substring(cursorPos);
+        const regex = " /<" + variable + ">/ "
+        setLetter(textBefore + regex + textAfter);
+
+         
+        setTimeout(() => {
+            textarea.selectionStart = textarea.selectionEnd = cursorPos + regex.length;
+            textarea.focus(); 
+        }, 0);
         setVariableSet([...variableSet, variable])
         setVariable("")
         

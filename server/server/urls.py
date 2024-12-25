@@ -21,5 +21,6 @@ urlpatterns = [
     path('api', views.home, name='home'),  
     path('postletters', views.postletters, name='postletters'), 
     path('api/getletters', views.getletters, name='getletters'),
-    path('api/get_letter_content', views.get_letter_content, name='get_letter_content')
+    path('api/get_letter_content', views.get_letter_content, name='get_letter_content'),
+    path('api/get_letter_regex', views.get_letter_regex, name='get_letter_content')
 ]
