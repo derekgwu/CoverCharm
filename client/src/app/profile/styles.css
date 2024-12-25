@@ -1,6 +1,6 @@
 .create-main{
     width: 100%;
-    background-color: var(---app-black);
+    background: linear-gradient(180deg, var(--app-black), var(--app-navy-blue));
     min-height: 100vh;
     height: auto;
     display: flex;
@@ -11,13 +11,12 @@
 
 .person{
     width: 100%;
-    height: 25vh;
+    min-height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     color: var(--app-yellow);
 }
 
@@ -32,7 +31,7 @@
 }
 
 .letters-menu{
-
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -49,7 +48,7 @@
     margin-left: 0;
     margin-right: auto;
     background-color: var(--app-yellow);
-    color: var(---app-black);
+    color: var(--app-black);
     border: none;
     border-radius: 10px;
     transition: all 0.3s;

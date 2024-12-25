@@ -4,12 +4,17 @@ import Navbar from "../components/Navbar";
 import React, {useEffect, useState, useRef} from "react"
 import LetterTemplateService from "../services/LetterTemplateService";
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { useRouter } from 'next/navigation';
   
 
 export default function CreateScreen() {
     const [letter, setLetter]= useState("");
     const [letterName, setLetterName] = useState("");
     const textareaRef = useRef(null);
+    const router = useRouter();
+    const navigateTo = (link) => {
+        router.push(link);
+    }
 
     const [cursorPosition, setCursorPosition] = useState(0);
     const [variable, setVariable] = useState([]);
@@ -37,7 +42,18 @@ export default function CreateScreen() {
         if(variable.length == 0){
             return;
         }
-        setLetter(letter + " /<" + variable + ">/ ");
+        const textarea = textareaRef.current;
+        const cursorPos = textarea.selectionStart;
+        const textBefore = letter.substring(0, cursorPos);
+        const textAfter = letter.substring(cursorPos);
+        const regex = " /<" + variable + ">/ "
+        setLetter(textBefore + regex + textAfter);
+
+         
+        setTimeout(() => {
+            textarea.selectionStart = textarea.selectionEnd = cursorPos + regex.length;
+            textarea.focus(); 
+        }, 0);
         setVariableSet([...variableSet, variable])
         setVariable("")
         
@@ -66,7 +82,7 @@ export default function CreateScreen() {
     const createLetter = () => {
         LetterTemplateService.createLetterTemplate(user?.email, letter, letterName);
         setShowModal(false)
-        
+        navigateTo("/profile")
     }
     const [showModal, setShowModal] = useState(false);
 

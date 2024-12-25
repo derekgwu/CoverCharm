@@ -1,5 +1,5 @@
 .home-main{
-    background-color: var(---app-black);
+    background: linear-gradient(180deg, var(--app-black), var(--app-navy-blue));
     height: 100vh;
     width: 100%;
 }

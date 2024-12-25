@@ -1,6 +1,6 @@
 .create-main{
     width: 100%;
-    background-color: var(---app-black);
+    background: linear-gradient(180deg, var(--app-black), var(--app-navy-blue));
     height: 100vh;
 }
 
@@ -77,7 +77,7 @@
 .variable-add-btn{
     background-color: var(--app-orange);
     border: none;
-    color: var(---app-black);
+    color: var(--app-black);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 20%;
@@ -94,7 +94,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     height: 50%;
-    color: var(---app-black);
+    color: var(--app-black);
     background-color: var(--app-yellow);
     border: none;
     transition: all 0.3s;
@@ -172,7 +172,7 @@
 .name-creation-modal{
     width: 45%;
     height: 45%;
-    background-color: var(---app-black); 
+    background-color: var(--app-black); 
     border: 2px solid var(--app-yellow);
     border-radius: 20px;
     padding: 5%;

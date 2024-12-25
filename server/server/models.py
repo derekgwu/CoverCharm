@@ -134,12 +134,12 @@ class LetterIds(models.Model):
 
 class LetterRegex(models.Model):
     regex = models.CharField(max_length=64)
-    letter = models.ForeignKey(LetterIds, on_delete=models.DO_NOTHING)
+    letter = models.OneToOneField(LetterIds, models.DO_NOTHING, primary_key=True)  # The composite primary key (letter_id, regex) found, that is not supported. The first column is selected.
 
     class Meta:
         managed = False
         db_table = 'letter_regex'
-        unique_together = ('regex', 'letter')
+        unique_together = (('letter', 'regex'),)
 
 
 class Letters(models.Model):

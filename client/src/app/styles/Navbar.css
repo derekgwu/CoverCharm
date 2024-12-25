@@ -1,6 +1,6 @@
 
 .navbar{
-    background-color: var(---app-black);
+    background-color: var(--app-black);
     border-bottom: 2px solid var(--app-yellow);
     width: 100%;
     height: 12vh;
