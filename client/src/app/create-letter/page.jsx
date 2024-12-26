@@ -5,16 +5,20 @@ import React, {useEffect, useState, useRef} from "react"
 import LetterTemplateService from "../services/LetterTemplateService";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useRouter } from 'next/navigation';
-  
+import { useSearchParams } from 'next/navigation';
 
 export default function CreateScreen() {
     const [letter, setLetter]= useState("");
     const [letterName, setLetterName] = useState("");
     const textareaRef = useRef(null);
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const letter_id = searchParams.get('letter_id');
     const navigateTo = (link) => {
         router.push(link);
     }
+
+    
 
     const [cursorPosition, setCursorPosition] = useState(0);
     const [variable, setVariable] = useState([]);
@@ -23,6 +27,31 @@ export default function CreateScreen() {
     //should be login to access this page in the first place
     const { user, error, isLoading } = useUser();
 
+    useEffect(() => {
+        if(letter_id != null){
+            LetterTemplateService.getLetterContent(letter_id).then((response) => {
+                setLetter(response.content)
+                setLetterName(response.name)
+            })
+
+            LetterTemplateService.getLetterRegex(letter_id).then((response) => {
+                const cleanedArray = response.map(item => {
+                    item.regex = item.regex.slice(2,-2)
+                    return item
+                });
+
+                const arr = []
+                cleanedArray.map(item => {
+                    arr.push(item.regex)
+                    return
+                })
+                console.log(arr)
+                
+
+                setVariableSet(arr)
+            })
+        }
+    },[letter_id])
     
 
     const updateLetter = (e) => {
@@ -84,6 +113,13 @@ export default function CreateScreen() {
         setShowModal(false)
         navigateTo("/profile")
     }
+
+    const saveLetter = () => {
+        LetterTemplateService.updateLetterTemplate(user?.email, letter, letterName, letter_id);
+        setShowModal(false)
+        navigateTo("/profile")
+    }
+
     const [showModal, setShowModal] = useState(false);
 
    
@@ -128,7 +164,7 @@ export default function CreateScreen() {
                 <input className="name-adder" value={letterName} onChange={updateLetterName}></input>
                 <div className="btn-div">
                     <button className="name-save-btn" onClick={()=>{setShowModal(false)}}>Cancel</button>
-                    <button className="name-save-btn" onClick={createLetter}>Save</button>
+                    <button className="name-save-btn" onClick={letter_id ? saveLetter: createLetter}>Save</button>
 
                 </div>
                 

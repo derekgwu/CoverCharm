@@ -20,6 +20,10 @@ const LetterDeployment = () => {
     const [showModal, setShowModal] = useState(false)
     const [printLetter, setPrintLetter] = useState("");
     const letterRef = useRef(null);  
+
+    const navigateTo = (link) => {
+        router.push(link);
+    }
     
 
     useEffect(() => {
@@ -73,12 +77,23 @@ const LetterDeployment = () => {
         }
         handlePrint();
     }, [printLetter])
+
+    const handleDelete = () => {
+        LetterTemplateService.deleteLetter(letter_id).then((response) => {
+            navigateTo("/profile")
+        })
+
+    }
+
+    const navigateToEdit = (letter_id) => {
+        router.push(`/create-letter?letter_id=${letter_id}`);
+    }
     
 
 
     return (
         <>
-            <div className="main">
+            <div className="deploy-main">
                 <Navbar />
                 <div className="deploy-content">
                     <div className="letter-showcase">
@@ -134,8 +149,8 @@ const LetterDeployment = () => {
                     </div>
                     <div className="options">
                         <button className="built-in-option" onClick={() => {setShowModal(true)}}>Create a Letter</button>
-                        <button className="built-in-option">Edit Template</button>
-                        <button className="delete-option">Delete This Template</button>
+                        <button className="built-in-option" onClick={() => {navigateToEdit(letter_id)}}>Edit Template</button>
+                        <button className="delete-option" onClick={handleDelete}>Delete This Template</button>
                     </div>
                 </div>
 

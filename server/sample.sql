@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS letters (
     letter TEXT NOT NULL,
     letter_id CHAR(64) PRIMARY KEY,
     l_name CHAR(64) NOT NULL,
+    date TIMESTAMP NOT NULL,
     foreign key (letter_id) references letter_ids(letter_id) ON DELETE CASCADE
 );
 
