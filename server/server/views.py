@@ -19,7 +19,6 @@ def postletters(request):
     if request.method == 'POST':
         try:
             body = json.loads(request.body)  
-            print(body)
             letter_id = uuid.uuid4()
             new_id = LetterIds.objects.create(email=body['user_id'], letter_id=letter_id)
             letter = Letters.objects.create(letter=body['letter'], letter_0=new_id, l_name=body['name'], date=timezone.now())
@@ -30,6 +29,24 @@ def postletters(request):
         except json.JSONDecodeError:
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
     return JsonResponse({'error': 'Only POST requests allowed'}, status=400)
+
+@csrf_exempt
+def update_letter(request):
+    if request.method == 'POST':
+        try:
+            body = json.loads(request.body)
+            letter_id = body['id']
+            old_regex = LetterRegex.objects.filter(letter_id=letter_id)
+            old_regex.delete()
+            for regex_instance in body['regex']:
+                regex = LetterRegex.objects.create(letter_id = letter_id, regex=str(regex_instance))
+            Letters.objects.filter(letter_0 = letter_id).update(letter=body['letter'], l_name=body['name'], date=timezone.now())
+            return JsonResponse({'received_value': body})
+            
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+    return JsonResponse({'error': 'Only POST requests allowed'}, status=400)
+        
 
 
 @csrf_exempt

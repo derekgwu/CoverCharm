@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/getletters', views.getletters, name='getletters'),
     path('api/get_letter_content', views.get_letter_content, name='get_letter_content'),
     path('api/get_letter_regex', views.get_letter_regex, name='get_letter_content'),
-    path('api/delete_letter', views.delete_letter, name='delete_letter')
+    path('api/delete_letter', views.delete_letter, name='delete_letter'),
+    path('api/update_letter', views.update_letter, name='update_letter')
 ]

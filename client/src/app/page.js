@@ -1,5 +1,6 @@
 "use client"
 import "./styles/Home.css";
+import "./page.module.css"
 import Navbar from "./components/Navbar.jsx";
 import React from "react";
 import { PiPaperPlaneTiltThin } from "react-icons/pi";

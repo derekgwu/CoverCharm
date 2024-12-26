@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
+import "./jank.css"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

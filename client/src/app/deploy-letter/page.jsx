@@ -84,12 +84,16 @@ const LetterDeployment = () => {
         })
 
     }
+
+    const navigateToEdit = (letter_id) => {
+        router.push(`/create-letter?letter_id=${letter_id}`);
+    }
     
 
 
     return (
         <>
-            <div className="main">
+            <div className="deploy-main">
                 <Navbar />
                 <div className="deploy-content">
                     <div className="letter-showcase">
@@ -145,7 +149,7 @@ const LetterDeployment = () => {
                     </div>
                     <div className="options">
                         <button className="built-in-option" onClick={() => {setShowModal(true)}}>Create a Letter</button>
-                        <button className="built-in-option">Edit Template</button>
+                        <button className="built-in-option" onClick={() => {navigateToEdit(letter_id)}}>Edit Template</button>
                         <button className="delete-option" onClick={handleDelete}>Delete This Template</button>
                     </div>
                 </div>
