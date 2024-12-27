@@ -6,13 +6,14 @@ import Navbar from "../components/Navbar";
 import LetterTemplateService from "../services/LetterTemplateService";
 import { useSearchParams } from 'next/navigation';
 import { useReactToPrint } from "react-to-print";
+
 import "./styles.css";
 
 const LetterDeployment = () => {
     const { user, error, isLoading } = useUser();
     const router = useRouter();
     const searchParams = useSearchParams();
-    const letter_id = searchParams.get('letter_id');
+    const [letter_id, setLetterID] = useState(null);
     const [letterTemplate, setLetterTemplate] = useState("");
     const [letterName, setLetterName] = useState("");
     const [letterRegex, setLetterRegex] = useState(null);
@@ -20,6 +21,11 @@ const LetterDeployment = () => {
     const [showModal, setShowModal] = useState(false)
     const [printLetter, setPrintLetter] = useState("");
     const letterRef = useRef(null);  
+
+    useEffect(() => {
+        const id = searchParams.get('letter_id');
+        setLeeterID(id);
+    }, [searchParams])
 
     const navigateTo = (link) => {
         router.push(link);
@@ -76,7 +82,7 @@ const LetterDeployment = () => {
             return;
         }
         handlePrint();
-    }, [printLetter])
+    }, [printLetter, handlePrint])
 
     const handleDelete = () => {
         LetterTemplateService.deleteLetter(letter_id).then((response) => {

@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
-import "./jank.css"
+import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <UserProvider>
+        <Suspense>
         <body className={inter.className}>{children}</body>
+        </Suspense>
       </UserProvider>
     </html>
   );

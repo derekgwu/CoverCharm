@@ -48,7 +48,7 @@ export default function Profile() {
         </div>
         <div className="letters-display">
           {letters && letters.map((letter, i) => (
-            <TemplateCard name={letter.letter_name} id={i} letter_id={letter.letter_id} date={letter.date}/>
+            <TemplateCard name={letter.letter_name} key={i} letter_id={letter.letter_id} date={letter.date}/>
           ))}
        
         </div>
