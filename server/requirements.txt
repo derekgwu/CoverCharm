@@ -50,7 +50,6 @@ matplotlib-inline==0.1.6
 mongoengine==0.28.2
 multidict==6.0.4
 mysql-connector-python==8.3.0
-pymysql==2.2.4
 names==0.3.0
 nest-asyncio==1.5.6
 numpy==1.26.2
