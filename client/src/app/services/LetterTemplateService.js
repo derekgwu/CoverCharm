@@ -24,6 +24,7 @@ class LetterTemplateService{
     }
     
     async getLetters(user_id){
+        console.log(process.env.NEXT_PUBLIC_SERVER_URL)
         const response = await axios.get(GET_LETTERS_API, {
             params: { email: user_id },
         });
