@@ -83,7 +83,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 ALLOWED_HOSTS = [
-   "localhost", "127.0.0.1", "44.207.7.134"
+   "localhost", "127.0.0.1", "54.234.231.115"
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -113,14 +113,16 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'root',
+        'USER': AWS_MASTER_USERNAME,
         'NAME' : 'server',
-        'PASSWORD': 'Fire7flower+',
-        'HOST': 'localhost',  # or your MySQL server IP/hostname
-        'PORT': '3306',        # default MySQL port
+        'PASSWORD': AWS_MASTER_PASSWORD,
+        'HOST':  AWS_RDS_ENDPOINT,  
+        'PORT': '3306',        
+        'OPTIONS': {
+            'charset': 'utf8mb4', 
+        },
     }
 }
-
 
 
 # Password validation
