@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar";
 import LetterTemplateService from "../services/LetterTemplateService";
 import { useSearchParams } from 'next/navigation';
 import { useReactToPrint } from "react-to-print";
-
 import "./styles.css";
 
 const LetterDeployment = () => {
@@ -24,7 +23,7 @@ const LetterDeployment = () => {
 
     useEffect(() => {
         const id = searchParams.get('letter_id');
-        setLeeterID(id);
+        setLetterID(id);
     }, [searchParams])
 
     const navigateTo = (link) => {
@@ -99,6 +98,7 @@ const LetterDeployment = () => {
 
     return (
         <>
+
             <div className="deploy-main">
                 <Navbar />
                 <div className="deploy-content">

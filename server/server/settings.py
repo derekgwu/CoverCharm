@@ -20,9 +20,6 @@ env.read_env(env_file)
 AWS_MASTER_USERNAME=env('AWS_MASTER_USERNAME')
 AWS_MASTER_PASSWORD=env('AWS_MASTER_PASSWORD')
 AWS_RDS_ENDPOINT=env('AWS_RDS_ENDPOINT')
-print(AWS_MASTER_PASSWORD)
-print(AWS_MASTER_USERNAME)
-print(AWS_RDS_ENDPOINT)
 pymysql.install_as_MySQLdb()
 
 
@@ -116,16 +113,14 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER': AWS_MASTER_USERNAME,
+        'USER': 'root',
         'NAME' : 'server',
-        'PASSWORD': AWS_MASTER_PASSWORD,
-        'HOST':  AWS_RDS_ENDPOINT,  
-        'PORT': '3306',        
-        'OPTIONS': {
-            'charset': 'utf8mb4', 
-        },
+        'PASSWORD': 'Fire7flower+',
+        'HOST': 'localhost',  # or your MySQL server IP/hostname
+        'PORT': '3306',        # default MySQL port
     }
 }
+
 
 
 # Password validation
