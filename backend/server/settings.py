@@ -83,7 +83,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 ALLOWED_HOSTS = [
-   "localhost", "127.0.0.1", "54.234.231.115"
+   "localhost", "127.0.0.1", "54.234.231.115", 
 ]
 
 ROOT_URLCONF = 'server.urls'

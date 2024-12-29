@@ -19,7 +19,7 @@ npm run dev
 ```
 
 ### Production Link 
-https://coverly-eight.vercel.app/
+https://covercharm.vercel.app/
 
 ### Known Bugs
 EC2 instance is down :(
