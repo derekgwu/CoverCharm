@@ -1,4 +1,4 @@
-# Coverly
+# CoverCharm
 
 ### Development Goals
 - This is a web application with a full-stack experience
