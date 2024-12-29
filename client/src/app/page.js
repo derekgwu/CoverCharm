@@ -20,7 +20,7 @@ export default function Home() {
       <Navbar/>
       <div className="title-page">
         <div className="title-text">
-          <h1>Coverly</h1>
+          <h1>OverCover</h1>
           <h3>Expedite quality cover letters easily. Generate personalized covers for your dream company
             in seconds.
           </h3>

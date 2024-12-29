@@ -22,4 +22,4 @@ npm run dev
 https://coverly-eight.vercel.app/
 
 ### Known Bugs
-See client directory to how to run the frontend locally
+EC2 instance is down :(
