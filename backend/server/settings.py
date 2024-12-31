@@ -20,6 +20,7 @@ env.read_env(env_file)
 AWS_MASTER_USERNAME=env('AWS_MASTER_USERNAME')
 AWS_MASTER_PASSWORD=env('AWS_MASTER_PASSWORD')
 AWS_RDS_ENDPOINT=env('AWS_RDS_ENDPOINT')
+AWS_PORT=env('AWS_PORT')
 pymysql.install_as_MySQLdb()
 
 
@@ -120,7 +121,7 @@ DATABASES = {
         'NAME' : 'server',
         'PASSWORD': AWS_MASTER_PASSWORD,
         'HOST':  AWS_RDS_ENDPOINT,  
-        'PORT': '3306',        
+        'PORT': '3307',        
         'OPTIONS': {
             'charset': 'utf8mb4', 
         },

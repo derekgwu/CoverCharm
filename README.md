@@ -24,7 +24,11 @@ npm install
 cd client
 npm run dev
 ```
-
+If you are developing on the frontend and would like to push code, please run 
+```
+npm run build
+```
+This will verify that a deployment on Vercel will not fail. If the build is successful, you can push code.
 ## How To Access Backend
 Note that only approved users have access to the `.pem` file. For security reasons, the `.pem` file is not on the repository, so you'll have to contact me for the permissions. The Amazon RDS instance is located in a private subnet, and the only device that can access it is the Amazon EC2 instance. Thus, to access the database, you'll need to `ssh` to the EC2 instance from your machine via an `ssh` tunnel.
 
