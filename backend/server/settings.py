@@ -76,7 +76,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
+    "http://localhost:3000",  "https://covercharm.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -121,7 +121,7 @@ DATABASES = {
         'NAME' : 'server',
         'PASSWORD': AWS_MASTER_PASSWORD,
         'HOST':  AWS_RDS_ENDPOINT,  
-        'PORT': '3307',        
+        'PORT': AWS_PORT,        
         'OPTIONS': {
             'charset': 'utf8mb4', 
         },
