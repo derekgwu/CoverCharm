@@ -3,6 +3,7 @@
     "@angular/animations": "^18.2.1",
     "axios": "^1.7.7",
     "react-icons": "^5.3.0",
+    "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.26.1"
   }
 }
