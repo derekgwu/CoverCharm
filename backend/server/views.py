@@ -85,7 +85,6 @@ def get_letter_content(request):
 @api_view(['GET'])
 def get_letter_regex(request):
     id = request.query_params.get('id')
-    print(id)
     data = LetterRegex.objects.filter(letter=id)
     response_data = []
     for item in data:
@@ -99,7 +98,6 @@ def get_letter_regex(request):
 @api_view(['GET'])
 def delete_letter(request):
     id = request.query_params.get('id')
-    print(id)
     data = LetterIds.objects.get(letter_id=id)
     data.delete()
     return JsonResponse({"200":"Success"}, safe=False)

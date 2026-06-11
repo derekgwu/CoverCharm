@@ -1,3 +1,4 @@
 pat.txt
 *server.config
 *.pem
+*.env

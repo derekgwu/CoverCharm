@@ -5,6 +5,8 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import Navbar from "../components/Navbar";
 import LetterTemplateService from "../services/LetterTemplateService";
 import { useSearchParams } from 'next/navigation';
+
+import { Puff } from 'react-loader-spinner';
 import { useReactToPrint } from "react-to-print";
 import "./styles.css";
 
@@ -19,6 +21,7 @@ const LetterDeployment = () => {
     const [letterRegexInputs, setLetterRegexInputs] = useState([])
     const [showModal, setShowModal] = useState(false)
     const [printLetter, setPrintLetter] = useState("");
+    const [showDeleteModal, setDeleteModal] = useState(false)
     const letterRef = useRef(null);  
 
     useEffect(() => {
@@ -122,7 +125,18 @@ const LetterDeployment = () => {
                                 ))
                             
                             ) : (
-                                <p>Loading Letter</p>
+                                <div className="loading-print">
+                                     <Puff
+                                        height={100}
+                                        width={100}
+                                        color="#FFD60A"
+                                        ariaLabel="loading"
+                                    />
+                                    <div className="loading-txt">
+                                        <h2>Loading Letter...</h2>
+                                    </div>
+                                    
+                                </div>
                             )}
                             </div>
                         </div>
@@ -156,7 +170,7 @@ const LetterDeployment = () => {
                     <div className="options">
                         <button className="built-in-option" onClick={() => {setShowModal(true)}}>Create a Letter</button>
                         <button className="built-in-option" onClick={() => {navigateToEdit(letter_id)}}>Edit Template</button>
-                        <button className="delete-option" onClick={handleDelete}>Delete This Template</button>
+                        <button className="delete-option" onClick={() => {setDeleteModal(true)}}>Delete This Template</button>
                     </div>
                 </div>
 
@@ -188,6 +202,20 @@ const LetterDeployment = () => {
                         <button onClick={() => {setShowModal(false)}}>Cancel</button>
                         <button onClick={replaceAndPrint}>Generate Letter</button>
                     </div>
+                </div>
+            </div>}
+
+            {showDeleteModal && <div className="modal-bg">
+                <div className="delete-modal">
+                    <h1>Warning: Deleting</h1>
+                    <h4>Deleting a Letter Template is a permanent action! Are you sure
+                        you want to proceed?
+                    </h4>
+                    <div className="delete-buttons">
+                        <button className="cancel-confirm" onClick={() => {setDeleteModal(false)}}>Cancel</button>
+                        <button className="delete-confirm" onClick={handleDelete}>Delete Template</button>
+                    </div>
+                        
                 </div>
             </div>}
         </>

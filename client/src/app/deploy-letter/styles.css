@@ -147,8 +147,109 @@
     color: var(--app-black);
 }
 
+
+.modal-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    transition: all 0.3s;
+}
+
+.delete-modal{
+    width: 45%;
+    height: 45%;
+    background-color: var(--app-black); 
+    border: 2px solid var(--app-yellow);
+    border-radius: 20px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.delete-modal h4{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: 300;
+}
+
+.delete-buttons{
+    margin-top: auto;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.cancel-confirm{
+    width: 30%;
+    margin-left: 5%;
+    height: 5vh;
+    background-color: var(--app-yellow);
+    color: var(--app-navy-blue);
+    border: 2px solid var(--app-black);
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 100%;
+}
+
+.cancel-confirm:hover{
+    transform: scale(1.2);
+    background-color: white;
+    transition: all 0.3s;
+}
+
+
+.delete-confirm{
+    width: 30%;
+    margin-left: 5%;
+    height: 5vh;
+    background-color: rgb(255, 53, 53);
+    border: 2px solid rgb(255, 53, 53);
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 100%;
+    transition: all 0.3s;
+}
+
+.delete-confirm:hover{
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+
+.loading-print{
+    padding: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+}
+
+.loading-txt{
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-txt h2{
+    margin-top: auto;
+    margin-bottom: auto;
+}
 @media print {
     span {
       font-size: 18px; 
     }
   }
+  

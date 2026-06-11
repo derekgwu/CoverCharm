@@ -89,6 +89,10 @@ export default function CreateScreen() {
     }
 
     const removeVariable = (variable) => {
+        const regex = new RegExp(`/<${variable}>/`, 'g');
+        let letterReplace = letter
+        letterReplace = letterReplace.replace(regex, "");
+        setLetter(letterReplace)
         setVariableSet((prevItems) => prevItems.filter((item) => item !== variable));
       };
 

@@ -20,6 +20,7 @@ env.read_env(env_file)
 AWS_MASTER_USERNAME=env('AWS_MASTER_USERNAME')
 AWS_MASTER_PASSWORD=env('AWS_MASTER_PASSWORD')
 AWS_RDS_ENDPOINT=env('AWS_RDS_ENDPOINT')
+AWS_PORT=env('AWS_PORT')
 pymysql.install_as_MySQLdb()
 
 
@@ -75,7 +76,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
+    "http://localhost:3000",  "https://covercharm.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -83,7 +84,10 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 ALLOWED_HOSTS = [
-   "localhost", "127.0.0.1", "54.234.231.115"
+   "localhost", 
+   "127.0.0.1", 
+   "52.72.123.216",
+   ".cover-charm.com"
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -117,7 +121,7 @@ DATABASES = {
         'NAME' : 'server',
         'PASSWORD': AWS_MASTER_PASSWORD,
         'HOST':  AWS_RDS_ENDPOINT,  
-        'PORT': '3306',        
+        'PORT': AWS_PORT,        
         'OPTIONS': {
             'charset': 'utf8mb4', 
         },
